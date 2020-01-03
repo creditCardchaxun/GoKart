@@ -1,0 +1,8 @@
+/* pages/success/success.wxss */
+.container{width:100%;height:auto;background-color: #fff;}
+.container .baoming{width:auto;padding:0 20rpx;margin-top:200rpx;}
+.container .baoming image{width:250rpx;height:auto;display: block;margin:0 auto;}
+.baoming-text{font-size:32rpx;color:#454545;text-align: center;margin-top:39rpx;}
+.baoming-p{font-size:24rpx;color:#999999;text-align: center;margin-top:37rpx;}
+/* .btn{width:80%;background:rgba(197,61,67,1);border-radius:40px;} */
+.container .baoming button{width:70%;height:80rpx;line-height:80rpx;background:rgba(197,61,67,1);border-radius:40px;color:#FCFBFC;font-size:30rpx;margin-top:126rpx;}

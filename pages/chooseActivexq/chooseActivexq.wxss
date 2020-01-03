@@ -1,0 +1,53 @@
+/* pages/chooseActivexq/chooseActivexq.wxss */
+.banner{width:100%;height:auto;position:relative;}
+.banner image{width:100%;height:auto;}
+ swiper{height:422rpx;}
+.activexq{width:100%;height:auto;background-color:#fff;margin-top:-60rpx;border-top-left-radius: 60rpx;border-top-right-radius: 60rpx;position:relative;}
+.active_01{width:auto;padding:30rpx 20rpx 0;}
+.active_01 .empty{width:55rpx;height:6rpx;background-color: #C53D43;display: block;margin-top:20rpx;}
+.active_01 .p{overflow: hidden;margin-top:30rpx;}
+.active_01 .p .p_m{width:auto;float:left;height:40rpx;font-size:30rpx;font-family:PingFang SC;font-weight:400;color:rgba(102,102,102,1);line-height:40rpx;overflow: hidden;}
+.active_01 .p_s{width:auto;float:right;}
+.active_01 .p_s text{width:auto;height:36rpx;line-height:36rpx;border:1rpx solid #C53D43;color:#C53D43;padding:0 10rpx;font-size:20rpx;}
+.active_01 .p_s .car{margin-right:20rpx;}
+.intro{height:auto;line-height: 38rpx;color:#666;font-size:24rpx;margin-top:30rpx;}
+.active_date{width:auto;height:auto;display: flex;align-items: center;margin-top:36rpx;}
+.active_date image{width:24rpx;height:24rpx;}
+.active_date text{color:#999;font-size:24rpx;margin-left:15rpx;}
+/* .active_02{width:100%;height:auto;margin-top:66rpx;border-top:1rpx solid #E6E6E6;overflow: hidden;}
+.active02{width:auto;padding:0 20rpx;float:left;margin-top:30rpx;}
+.userinfo-avatar{width:43rpx;height:43rpx;float:left;margin-right:18rpx;}
+.userinfo-nickname{color:#666666;font-size:24rpx;line-height:43rpx;float:left;margin-right:18rpx;}
+.userinfo-qi{width:34rpx;height:31rpx;float:left;margin-top:8rpx;}
+.userinfo-num{width:66rpx;height:66rpx;float:right;margin-top:18rpx;margin-right:20rpx;} */
+ .active_03{width:710rpx;padding: 26rpx 0rpx 26rpx;box-shadow: 0 0 2rpx 5rpx #f5f5f5;margin:35rpx auto 40rpx;border-radius:12rpx;}
+.active03{width:auto;padding:0 20rpx;overflow: hidden;}
+.active03  text{font-size:28rpx;color:#454545;float:left;margin-left:20rpx;width:89%;overflow: hidden;}
+.active_03 .map{width:36rpx;height:36rpx;float:left;}
+.active_03 .left{width:16rpx;height:26rpx;float:right;margin-top:8rpx;}
+
+/*.active_04{width:710rpx;padding: 26rpx 0rpx 26rpx;box-shadow: 0 0 2rpx 5rpx #E6E6E6;margin:35rpx auto 0;border-radius:12rpx;text-align: center}
+.active_04 .h3{color:#231916;font-size:45rpx;display: block;}
+.active_04 .p{color:#231916;font-size:24rpx;display: block;margin-top:10rpx;}
+.act_date{width:auto;height:auto;text-align: center;margin-top:30rpx;}
+.act_date image{width:90rpx;height:81rpx;text-align: center} */
+
+.active_05{width:100%;margin-top:20rpx;padding-bottom:40rpx;}
+.active_05 .as_t{width:auto;padding:0 20rpx;overflow: hidden;}
+.active_05 .as_t .as_p{float:left;width:50%;color:#454545;font-size:28rpx;text-align: center;margin-top:30rpx;}
+.active_05 .as_t .as_p text{color:#999999;font-size:28rpx;}
+.as_icon{width:auto;padding:0 20rpx;display: flex;align-items: center;justify-items: middle;margin-top:40rpx;}
+.as_icon .as_01{text-align: center;overflow: hidden;}
+.as_icon .as_01 .userinfo-avatars{width:43rpx;height:43rpx;margin-right:18rpx;}
+.as_icon .as_01 .userinfo-nicknames{color:#666666;font-size:24rpx;line-height:43rpx;margin-right:18rpx;}
+
+.active_xq02{border-top:20rpx solid #F5F5F5;padding-bottom: 70rpx;border-bottom:20rpx solid #f5f5f5;}
+.xq03{width:auto;padding:0 20rpx;}
+.active_xq02 .h2{color:#C53D43;font-size:30rpx;margin:38rpx 0 32rpx;border-left:4rpx solid #C53D43;padding-left:20rpx;}
+.a-intro{width:100%;height:auto;}
+.a-intro image{width:100%;height:400rpx;}
+.a-intro text{color:#454545;font-size:28rpx;line-height: 48rpx;}
+.wx{width:295rpx;height:109rpx;margin:20rpx auto 0;display: block;}
+.wx-text{text-align: center;display: block;color:#999999;font-size:20rpx;margin-top:16rpx;}
+
+.xq03 view{color:#333;font-size:26rpx;}

@@ -1,0 +1,26 @@
+
+ .movie-container{
+  /* display: flex; */
+  /* flex-direction: column; */
+  width:100%;
+  height:auto;
+  }
+
+ .movie-content-wrapper{
+  width:100%;
+  height:auto;
+  padding-top:10rpx;
+ }
+
+ .total-01{margin-top:20rpx;}
+ .find_list{width:auto;padding:0 20rpx 50rpx;}
+ .find_list .find-img{width:100%;height:auto;}
+ .find_list .find-img image{width:710rpx;height:auto;border-radius: 20rpx;}
+ .h3{ color:#454545; font-size: 30rpx;height:32rpx;line-height: 32rpx;overflow: hidden;position:relative;margin-top:30rpx;}
+ .star{width:32rpx;height:32rpx;position:absolute;top:0;right:0;}
+ .h3 text{color:#454545; font-size: 30rpx;height:32rpx;line-height: 32rpx;overflow: hidden;width:90%;}
+ .find-p{color:#666666; font-size:26rpx;height:120rpx;line-height: 40rpx;overflow: hidden;margin-top:20rpx;}
+ .star{width:32rpx;height:32rpx;margin-left:24rpx;}
+ /* .star{width:32rpx;height:32rpx;position:absolute;top:0;right:0;background: url('http://kart.yaocongkeji.com/applets/image/likes.png')no-repeat 100% 100%;background-size:100% 100%;} */
+
+ .ons{background: url('http://kart.yaocongkeji.com/applets/image/likes_hover.png')no-repeat 100% 100%;background-size:100% 100%;}

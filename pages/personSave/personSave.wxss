@@ -1,0 +1,21 @@
+/* pages/personSave/personSave.wxss */
+.container{background-color: #FCFBFC;padding-top:20rpx;}
+.confim{width:auto;padding:0 20rpx;}
+.weui-cells{border-radius: 15rpx;box-shadow: 0rpx 0rpx 5rpx 5rpx #f5f5f5;}
+.weui-input{text-align: right;padding-right:20rpx;}
+.weui-label{
+  width:130px;
+  font-size:28rpx;
+  color:#454545;
+}
+.weui-select{
+  text-align: right;
+  color:#454545;
+}
+.weui-cell__bd{
+  font-size:28rpx;
+}
+.weui-select{
+  border-right:0;
+}
+.weui-btn-area button{border-radius: 45rpx;background-color: #C53D43;color:#fff;font-size:36rpx;}

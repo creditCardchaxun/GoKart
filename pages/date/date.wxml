@@ -1,0 +1,36 @@
+<!--pages/date/date.wxml-->
+<!-- <view>
+  <!-- <view>{{year}}年{{month}}月{{day}}日</view> -->
+  <!-- <view class='dates'> <text>年</text> <text>月</text>  <text>日</text>  </view>
+  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;padding:0 30rpx;box-sizing:border-box;" value="{{value}}" bindchange="bindChange">
+    <picker-view-column>
+      <view wx:for="{{years}}" style="line-height: 50px;text-align:center">{{item}}年</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{months}}" style="line-height: 50px;text-align:center">{{item}}月</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{days}}" style="line-height: 50px;text-align:center">{{item}}日</view>
+    </picker-view-column>
+  </picker-view>
+</view> --> 
+
+<calendar 
+ style="width:100%;"
+   start-date="2019-01"
+   end-date="2030-01"
+   days-color="{{color}}"
+   weeks-type="cn"
+   binddayClick="dayClick"
+/>
+
+<view class='intro' style='padding:0 20rpx;color:#C53D43;font-size:24rpx;margin-top:50rpx;'>温馨提示：
+<view  style="display:block;text-align:center;">该<text style="color:#C53D43;">{{timeName}}</text>全部可参赛活动时间
+  <view class='total'> 
+    <view class='other' wx:for='{{timeDuans}}' style="display:block;padding:15rpx 0;" data-value='{{item}}'  bindtap='tochooseTime'>
+      {{item}}
+    </view>
+   </view> 
+ </view>
+   <!-- <view wx:if='{{!timeShow}}' style='text-align:center'>该赛事还没有活动时间,请选择其他活动</view> -->
+ </view>

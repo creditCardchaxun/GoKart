@@ -1,0 +1,6 @@
+/* pages/activity/activity.wxss */
+.container{width:auto;padding:20rpx 30rpx 100rpx;}
+.container .h2{font-size:36rpx;color:#000000}
+.container .content{font-size:28rpx;color:#454545;line-height: 48rpx;margin-top:40rpx;}
+.container .h3{font-size:30rpx;color:#454545;margin-top:45rpx;}
+.container .p{font-size:28rpx;color:#666666;margin-top:45rpx;}

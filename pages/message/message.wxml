@@ -1,0 +1,31 @@
+<!--pages/message/message.wxml-->
+<view class='message'>
+          <view class="weui-cells weui-cells_after-title">
+            <!-- <navigator url="/pages/activeDetail/activeDetail?id={{item.id}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active" wx:for='{{notice}}'> -->
+               <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" wx:for='{{notice}}' bindtap='toMessageDetail' data-id="{{item.pid}}" data-url="{{item.type_url}}">
+                   <view class="weui-cell__bd">{{item.name}}</view>
+                   <view class="weui-cell__ft weui-cell__ft_in-access" wx:if='{{item.type_url!=2}}'></view>
+               </view> 
+            <!-- </navigator> -->
+            <!-- <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">非常遗憾赵六退出赛事</view>
+              
+            </navigator>
+               <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">非常遗憾，李四组建的团队因成员不足组建失败</view>
+            </navigator>
+               <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">恭喜王五成功组建团队</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+               <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">非常遗憾赵六退出赛事</view>
+              
+            </navigator>
+               <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">张三成功加入赛事</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator> -->
+        </view>
+
+</view>

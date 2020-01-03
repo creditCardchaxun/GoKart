@@ -1,0 +1,68 @@
+<!--pages/photosList/photosList.wxml-->
+<view class='photos'>
+     <view class='quxiaos' bindtap='edit' wx:if='{{showtitle}}'>{{edit}}</view>
+     <view class='photosList'>
+         <view class='photoslist'>
+                <checkbox-group bindchange="checkboxChange" wx:if='{{shows}}'>
+                    <view wx:if="{{parentId&&checkboxItems==''}}" style='text-align:center;color:#666;margin:30rpx 0;'>暂无可用的图片,快去相册添加吧</view>  
+                    <label class="weui-cell weui-check__label" wx:for="{{checkboxItems}}" wx:key="id">
+                    <checkbox class="weui-check" value="{{item.id}}" checked="{{item.checked}}"/>
+                     <view class="weui-cell__hd weui-check__hd_in-checkbox">
+                        <!-- <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{!item.checked}}"></icon> -->
+                        <!-- <icon class="weui-icon-checkbox_success" type="success" size="23" wx:if="{{item.checked}}"></icon> -->
+                        <image src='http://kart.yaocongkeji.com/applets/image/checked.png' wx:if="{{item.checked}}" style='width:32rpx;height:32rpx;'></image>
+                     </view>
+                    <view class="weui-cell__bd">
+                      <image src='{{item.pic}}' data-id="{{item.id}}"></image> 
+                    </view>
+                </label>
+            </checkbox-group>
+
+         <!-- 编辑图片放大查看 -->
+            <view class='photoslist' wx:if='{{!shows}}'>
+               <view class='item' wx:for="{{checkboxItems}}">
+                   <view class='item-01'>
+                     <image src='{{item.pic}}' data-id="{{item.id}}" data-url='{{item.pic}}' bindtap='previewImage'></image> 
+                   </view>
+                </view>
+
+           <view class="weui-uploader"> 
+              <view class="weui-uploader__bd"> 
+                <view class="weui-uploader__files"> 
+                 </view> 
+                 <view class="weui-uploader__input-box"> 
+                   <view class="weui-uploader__input" bindtap="chooseImage"></view> 
+                  </view> 
+              </view> 
+            </view>
+            </view>
+
+          <view class='uploader' wx:if='{{showtitle}}'>
+            <view class="weui-uploader" wx:if='{{shows}}'> 
+              <view class="weui-uploader__bd"> 
+                <view class="weui-uploader__files"> 
+                 </view> 
+                 <view class="weui-uploader__input-box"> 
+                   <view class="weui-uploader__input" bindtap="chooseImage"></view> 
+                  </view> 
+              </view> 
+              </view>
+            </view> 
+             </view>
+          <button type='default' class="btn {{showsbtn?'ons':''}}"  bindtap='toDelete' wx:if='{{showsbtn}}'>删除</button> 
+     </view>
+</view>
+
+
+    <!-- 弹框 -->
+    <view class='model {{showModel? "show-dialog":""}}'>
+       <view class='mode-content'>
+            <!-- <image src='/pages/img/dh-icon.png' class='modelImg'></image> -->
+             <text class='title'>是否删除照片？</text>
+             <!-- <input type="text" placeholder='请输入您的密码' class='inputs' bindinput="bindKeyInput"></input> -->
+             <view class='confim'>
+                 <text class='quxiao' bindtap="closeDialog">取消</text>
+                 <text bindtap="toDeleteDetail" style='color:#C53D43;'>确认</text>
+             </view>
+       </view>
+    </view>

@@ -1,0 +1,17 @@
+<!--pages/success/success.wxml-->
+<view class='container'>
+  <view class='baoming' wx:if="{{show}}">
+     <image src='http://kart.yaocongkeji.com/applets/image/success.png' mode='widthFix'></image>
+      <view class='baoming-text'>{{title}}</view>
+      <view class='baoming-p'>{{title}}，内容详情请到我的-订单中查询</view>
+       <button type='default' class='btn' bindtap='tolist'>查看订单</button>
+       <!-- <button type='default' class='btn' bindtap='tohome'  wx:if='{{showOrder}}'>返回首页</button> -->
+  </view>
+
+    <view class='baoming' wx:else>
+     <image src='/pages/img/fail.png' mode='widthFix'></image>
+      <view class='baoming-text'>{{title}}</view>
+      <view class='baoming-p'>失败原因：有人比你抢先一步哦，建议重新组团</view>
+      <!-- <button type='default' class='btn'>查看订单</button> -->
+  </view>
+</view>

@@ -1,0 +1,32 @@
+<!--pages/chooseActity/chooseActity.wxml-->
+<view class='container'>
+  <view class='chooseList' wx:for="{{chooseActive}}">
+    <navigator url='/pages/chooseActivexq/chooseActivexq?id={{item.id}}' open-type='redirectTo'> 
+    <image src='{{item.pic}}'></image></navigator>
+     <view class='p'><navigator url='/pages/chooseActivexq/chooseActivexq?id={{item.id}}' open-type='redirectTo'>{{item.name}}</navigator> </view>
+     <view class='intro'> <rich-text nodes='{{item.desc}}'></rich-text></view>
+      <button type='default' class='btn' bindtap='toactivity' data-id='{{item.id}}' data-title='{{item.name}}' data-img='{{item.pic}}' >选择活动</button>
+  </view>
+   
+
+
+    <!-- <view class='chooseList'>
+     <image src='/pages/img/banner.png' mode='widthFix'></image>
+     <view class='p'>卡丁车-室内赛道</view>
+     <view class='intro'>卡丁车(Karting)，又称高卡车(Go-Kart)或小型赛车，是一种赛车运动。顾名思义，车手所驾的车子论大小、功率输出比专业级的...</view>
+      <button type='default' class='btn'>选择活动</button>
+  </view>
+
+    <view class='chooseList'>
+     <image src='/pages/img/banner.png' mode='widthFix'></image>
+     <view class='p'>卡丁车-室内赛道</view>
+     <view class='intro'>卡丁车(Karting)，又称高卡车(Go-Kart)或小型赛车，是一种赛车运动。顾名思义，车手所驾的车子论大小、功率输出比专业级的...</view>
+      <button type='default' class='btn'>选择活动</button>
+  </view> -->
+
+</view>
+
+
+
+
+

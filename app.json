@@ -1,0 +1,80 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/date/date",
+    "pages/personSave/personSave",
+    "pages/collect/collect",
+    "pages/message/message",
+    "pages/messageDetail/messageDetail",
+    "pages/photosList/photosList",
+    "pages/chooseActivexq/chooseActivexq",
+    "pages/chooseActity/chooseActity",
+    "pages/find/find",
+    "pages/search/search",
+    "pages/findDetail/findDetail",
+    "pages/success/success",
+    "pages/confimInfor/confimInfor",
+    "pages/activeDetail/activeDetail",
+    "pages/announce/announce",
+    "pages/order/order",
+    "pages/me/me",
+    "pages/safe/safe",
+    "pages/activity/activity"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Red1karting",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#C53D43",
+    "borderStyle": "black",
+    "backgroundColor": "#FCFBFC",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/pages/img/home.png",
+        "selectedIconPath": "/pages/img/home_hover.png"
+      },
+      {
+        "pagePath": "pages/find/find",
+        "text": "发现",
+        "iconPath": "/pages/img/faxian.png",
+        "selectedIconPath": "/pages/img/faxian-hover.png"
+      },
+      {
+        "pagePath": "pages/announce/announce",
+        "text": "发布",
+        "iconPath": "/pages/img/fabu.png",
+        "selectedIconPath": "/pages/img/fabu-hover.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "订单",
+        "iconPath": "/pages/img/dingdan.png",
+        "selectedIconPath": "/pages/img/dingdan-hover.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "/pages/img/me.png",
+        "selectedIconPath": "/pages/img/me-hover.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "plugins": {
+    "calendar": {
+      "version": "1.1.3",
+      "provider": "wx92c68dae5a8bb046"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

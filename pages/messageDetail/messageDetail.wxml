@@ -1,0 +1,9 @@
+<!--pages/messageDetail/messageDetail.wxml-->
+<import src="../wxParse/wxParse.wxml" />
+<view class='container'>
+   <view class='message'>{{findDetail.name}}</view>
+   <view class='content'>
+       <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+   
+   </view>
+</view>

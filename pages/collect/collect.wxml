@@ -1,0 +1,22 @@
+
+<view class='movie-container'>
+   <view class="movie-content-wrapper">
+      <view class='total-01' wx:if="{{collectList.length>0}}">
+         <scroll-view scroll-y="{{true}}">
+              <view class='find_list' wx:for="{{collectList}}">
+               <navigator url='/pages/findDetail/findDetail?id={{item.id}}'>
+                 <view class='find-img'><image src='{{item.pic}}' mode='widthFix'></image></view>
+                </navigator>
+                 <view class='h3'>
+                 <text>{{item.name}}</text>
+               <view class='starHover' style='width:10%;height:60rpx;display:inline-block;position:absolute;top:0;right:0;' data-id="{{item.id}}" bindtap='toChangeStar' data-isLike="2">
+                  <image src=' http://kart.yaocongkeji.com/applets/image/likes_hover.png' class='star'></image> 
+                   </view>
+                 </view>
+                   <view class='find-p'>{{item.desc}}</view>
+              </view>
+         </scroll-view>
+           </view>
+            <view wx:else style='text-align:center;font-size:30rpx;color:#666;padding:30rpx 0;'>暂无收藏数据</view>
+   </view>
+</view>

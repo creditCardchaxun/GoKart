@@ -1,0 +1,68 @@
+<!--pages/chooseActivexq/chooseActivexq.wxml-->
+<import src="../wxParse/wxParse.wxml" />
+<view class='container'>
+<view class="banner">
+<scroll-view class="scrollView" scroll-y='true' >
+  <swiper
+  indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}"
+  interval="{{interval}}"
+  duration="{{duration}}"
+  indicator-active-color="#C53D43"
+  indicator-color="#fff"
+  >
+  <block wx:for="{{imgLists}}" wx:key="{{index}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" mode="widthFix" width="100%" />
+    </swiper-item>
+  </block>
+</swiper>
+</scroll-view>
+</view>
+<!-- <view class="banner">
+<image src='/pages/img/banner.png' mode='widthFix'></image>
+</view> -->
+<view class="activexq">
+  <view class='active_01'>
+    <text class='empty'></text>
+    <view class='p'><view class='p_m'>{{chooseDetail.name}}</view> 
+     </view>
+    <view class='intro'>
+   <!-- <template is="wxParse" data="{{wxParseData:content.nodes}}"/> -->
+     <rich-text nodes='{{nodes}}'></rich-text>
+    
+    </view>
+  </view>
+
+ <view class='active_03' bindtap='toMap'>
+     <view class='active03'>
+      <image src='http://kart.yaocongkeji.com/applets/image/map.png' class='map'></image>
+      <text>{{address[0].address}}</text>
+      <image src='http://kart.yaocongkeji.com/applets/image/left.png' class='left'></image>
+      </view>
+  </view>
+
+  <view class='active_xq02'>
+    <view class='xq03'>
+     <view class='h2'>活动详情</view>
+        <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+          
+            <!-- <view class='a-intro'>
+              <image src='/pages/img/banner.png'></image>
+              <text>卡丁车手遇到飞机会碰撞出什么样的火花呢。Duang、Duang，飞车手就此诞生。年轻的面庞野心勃勃，斗志昂扬。肆意翱翔在蓝天之上，狂野奔放。在天空中享受速度的激...</text>
+                  <image src='/pages/img/banner.png'></image>
+              <text>卡丁车手遇到飞机会碰撞出什么样的火花呢。Duang、Duang，飞车手就此诞生。年轻的面庞野心勃勃，斗志昂扬。肆意翱翔在蓝天之上，狂野奔放。在天空中享受速度的激...</text>
+
+            </view> -->
+     </view>
+<!-- 
+       <image src='/pages/img/banner.png' class='wx'></image>
+                <text class='wx-text'>长按保存到本地</text> -->
+  </view>
+
+
+
+
+
+</view>
+</view>

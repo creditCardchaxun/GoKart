@@ -1,0 +1,179 @@
+<!--pages/activeDetail/activeDetail.wxml-->
+<import src="../wxParse/wxParse.wxml" />
+<view class='container'>
+   <view class="banner">
+    <scroll-view class="scrollView" scroll-x='true' >
+      <swiper
+      indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}"
+      interval="{{interval}}"
+      duration="{{duration}}"
+      indicator-active-color="#C53D43"
+      indicator-color="#fff"
+      >
+      <block wx:for="{{activeDetail.pics}}" wx:key="{{index}}">
+         <swiper-item>
+           <image src="{{item}}" class="slide-image" mode="widthFix" style='width:100%' />
+         </swiper-item>
+         </block>
+        </swiper>
+      </scroll-view>
+     </view>
+<!-- <view class="banner">
+    <image src='{{activeDetail.pic}}' mode='widthFix' style='width:100%'></image>
+</view> -->
+
+<view class="activexq">
+  <view class='active_01'>
+    <text class='empty'></text>
+    <view class='p'><view class='p_m'>{{activeDetail.name}}</view> <view class='p_s'><text class="car">{{activeDetail.type_name}}</text> <text>{{activeDetail.is_complate}}</text></view>  </view>
+    <view class='intro'><rich-text nodes='{{activeDetail.desc}}'></rich-text></view>
+    <view class='active_date'> 
+
+    <view class='date_01'>
+        <image src='http://kart.yaocongkeji.com/applets/image/shijian.png'></image> 
+        <text>{{activeDetail.created_at}}   {{activeDetail.date}}</text> 
+         <text style='color:#C53D43'>(活动开始时间)</text>  
+    </view>
+   </view>
+  </view>
+
+  <view class='active_02'>
+    <view class='active02'>
+     <image src='{{activeDetail.avatar}}' class='userinfo-avatar'></image> 
+     <text class='userinfo-nickname'>{{activeDetail.nickname}}</text>
+     <image src='http://kart.yaocongkeji.com/applets/image/qi.png' class='userinfo-qi'></image>
+     </view>
+     <image src='http://kart.yaocongkeji.com/applets/image/iphone.png' class='userinfo-num' bindtap='number'></image>
+  </view>
+
+  <view class='active_03' bindtap='toMap'>
+     <view class='active03'>
+        <!-- <map
+          longitude="{{longitude}}"
+          latitude="{{latitude}}"
+          scale="14"
+          markers="{{markers}}"
+          bindmarkertap="markertap"
+          bindregionchange="regionchange"
+          show-location
+          /> -->
+      <image src='http://kart.yaocongkeji.com/applets/image/map.png' class='map'></image>
+      <!-- <text>北京市朝阳区来广营东路88号</text> -->
+      <text>{{activeDetail.address.address}}</text>
+      <image src='http://kart.yaocongkeji.com/applets/image/left.png' class='left'></image>
+      </view>
+  </view>
+
+  <view class='active_04'>
+    <view class='active_04-time' wx:if='{{!showTime}}'>
+       <text class='h3'>倒计时</text>
+       <text class='p'>距离报名时间还剩</text>
+       <view class='act_date'>
+          <!-- {{countTime}} -->
+         <view class='bg'>{{dayTime}}</view> <text>天</text> 
+          <view class='bg'>{{hoursTime}}</view> <text>时</text> 
+          <view class='bg'>{{minutesTime}}</view> <text>分</text> 
+       </view>
+    </view>
+    <view class='timeover' wx:else>
+       <image src='/pages/img/timeover.png'></image>
+    </view>
+  </view>
+
+  <view class='active_05'>
+    <view class='as_t'>
+     <view class='as_p'>总人数：<text>{{activeDetail.most}}人</text></view>
+     <view class='as_p'>已参加：<text>{{activeDetail.mosted}}人</text></view>
+     <view class='as_p'>活动成团费：<text>{{activeDetail.price}}元/人</text></view>
+     <view class='as_p' wx:if="{{showCost}}">成团剩余费用：<text>{{activeDetail.remainingcost}}元</text></view>
+    </view>
+    <view class='as_icon'>
+     <view class='as_01' wx:for='{{tuanList}}'>
+      <image src='{{item.avatar}}' class='userinfo-avatars'></image> 
+      <text class='userinfo-nicknames'>{{item.nickname}}</text>
+     </view>
+    </view>
+    <view class='jiesuan' wx:if="{{jiesuan}}" bindtap='toCostPay'>点我任性一把 <image src='/pages/img/click.png' style='width:28rpx;height:34rpx;vertical-align:middle'></image></view>
+  </view>
+
+  <view class='active_xq02'>
+    <view class='xq03'>
+    <view class='h2'>活动详情</view>
+     <view class='a-intro'>
+        <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+        </view>
+     </view>
+
+  </view>
+
+  <view style="height:100rpx;"></view>
+  <view class='footer'>
+  <navigator url='/pages/index/index' open-type="switchTab">
+    <view class='foot-01'>
+       <image src='http://kart.yaocongkeji.com/applets/image/returnhome.png'></image>
+       <text>返回首页</text>
+    </view>
+     </navigator>
+       <view class='foot-01 foot_btn'>
+          <image src='http://kart.yaocongkeji.com/applets/image/share.png'></image>
+          <text>分享活动</text>
+       <button open-type='share' class='sharebutton' plain='true' data-id='{{activeDetail.id}}'  data-name='{{activeDetail.name}}' ></button>
+    </view>
+       <view class='foot-01' wx:if="{{is_user}}">
+        <button class='btn'  disabled="{{checked}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">{{baoming}}</button>
+      </view>
+      <view class='foot-01' wx:if="{{!is_user}}" bindtap='toDetailMain' data-id="{{activeDetail.complate_status}}" data-ids='{{activeDetail.id}}' data-price='{{activeDetail.price}}' data-title='{{baoming}}' data-order='{{activeDetail.order.id}}'>
+        <button class="btn {{checked?'disabled':''}}" disabled="{{checked}}">{{baoming}}</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+    <!-- 电话弹框 -->
+    <view class='model {{showModel? "show-dialog":""}}'>
+       <view class='mode-content'>
+            <image src='http://kart.yaocongkeji.com/applets/image/dh-icon.png' class='modelImg'></image>
+             <text class='title'  style='letter-spacing:5rpx;'>{{phone}}</text>
+             <view class='confim'>
+                 <text class='quxiao' bindtap="closeDialog">取消</text>
+                 <text bindtap="callNumber" style='color:#C53D43;'>拨打</text>
+             </view>
+       </view>
+    </view>
+
+    <!-- 退团弹框 -->
+     <view class='model {{showModelTuan? "show-dialog":""}}'>
+       <view class='mode-content'>
+            <image src='http://kart.yaocongkeji.com/applets/image/return.png' class='modelImg'></image>
+             <text class='title'>您确认要退出该团吗？</text>
+             <view class='confim'>
+                 <text class='quxiao' bindtap="closeDialog">取消</text>
+                 <text bindtap="showReturn" data-id="{{activeDetail.order.id}}">确定</text>
+             </view>
+       </view>
+    </view>
+
+    <!-- 结算剩余团费 -->
+      <view class='model {{showModelCost? "show-dialog":""}}'>
+       <view class='mode-content'>
+            <image src='/pages/img/cost.png' class='modelImg'></image>
+             <text class='title'>您确认要付清剩余成团费用？</text>
+             <view class='confim'>
+                 <text class='quxiao' bindtap="closeDialog">取消</text>
+                 <text bindtap="toPay" data-id="{{activeDetail.id}}">确定</text>
+             </view>
+       </view>
+    </view>
+
+    <!-- 取消支付弹框 -->
+     <view class='model {{showModelPay? "show-dialog":""}}'>
+       <view class='mode-content'>
+            <image src='/pages/img/cost.png' class='modelImg'></image>
+             <text class='title'>您确认要取消订单支付？</text>
+             <view class='confim'>
+                 <text class='quxiao' bindtap="toPay" data-id="{{activeDetail.id}}">取消</text>
+                 <text bindtap="closeDialog" >确定</text>
+             </view>
+       </view>
+    </view>

@@ -1,0 +1,99 @@
+/**index.wxss**/
+page{background-color:#FCFBFC;}
+/* .container{} */
+swiper{width:710rpx;height:400rpx;margin:0 auto;}
+swiper swiper-item{width:100%;height:400rpx;}
+swiper swiper-item .slide-image{width:100%;border-radius: 20rpx;border-bottom-right-radius: 15px;border-bottom-left-radius: 15px;}
+.logo{width:148rpx;height:194rpx;margin: 45rpx auto;}
+.logo image{width:100%;height:100%;overflow: hidden}
+.activity{width:710rpx;margin:0 auto;}
+.activity .h3{display: block;text-align: center;font-size:38rpx;font-weight:400;color:rgba(197,61,67,1);}
+.active_all{width:100%;height:auto;overflow: hidden;margin-top:53rpx;}
+.active_all .ul{width:102%;height:auto; }
+
+/* .active_all .ul {
+    column-count: 2;    
+    column-gap: 4rpx;
+    width: 102%;
+}
+.active_all .ul .li{
+    background: #fff;
+    width:320rpx;
+    display: inline-block; 
+     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20rpx;
+    margin-right:20rpx;
+    border-radius: 12rpx;
+}  */
+.active_all .ul .li{width:100%;height:auto;float:left;background-color: #fff;border-radius: 12rpx;margin-top:20rpx;}
+.active_all .ul .li .active_img{width:100%;height:230rpx;overflow: hidden;position:relative;}
+.active_all .ul .li .active_img image{width:100%;height:100%;display: block;}
+.active_all .ul .li .active_img .active-position{
+  position:absolute;top:0;right:0;width:74rpx;height:74rpx;
+} 
+.active_all .ul .li:nth-child(2n){margin-right:0;}
+.active_all .ul .li:nth-child(2n) .active_img{width:100%;height:345rpx;overflow: hidden;}
+
+.active_all .ul .li .active_img .active-position .s_icon{width:28rpx;height:28rpx;position:absolute;top:10rpx;right:8rpx;}
+.active-main{width:100%;height:auto;}
+.active-main .active-btn{width:auto;height:auto;box-sizing:border-box;margin:10rpx 0 20rpx 20rpx;overflow: hidden}
+.active-main .active-btn text{display:block;padding:0 10rpx;height:36rpx;border:1rpx solid rgba(197,61,67,1);border-radius:4rpx;line-height: 36rpx;text-align: center;font-size:20rpx;margin-right:18rpx;color:rgba(197,61,67,1);float:left;}
+.active-h3{width:auto;padding:0 20rpx;color:28rpx;font-size: 28rpx;font-family:PingFang SC;height:45rpx;line-height:45rpx;overflow:hidden;
+text-overflow:ellipsis;white-space:nowrap;}
+.active-date{width:auto;height:24rpx;font-size:22rpx;font-family:PingFang SC;font-weight:400;color:rgba(153,153,153,1);line-height:24rpx;padding:0 20rpx;margin-top:20rpx;overflow: hidden;}
+.active-date text{float:right;}
+.active-avtar{width:auto;border-top:1rpx solid #E6E6E6;padding:18rpx 20rpx;display: flex;align-items: center;margin-top:23rpx;}
+.active-avtar .userinfo-avatar{  width:44rpx;height:44rpx;border-radius: 50%;margin-right:18rpx;}
+.userinfo-nickname{height:44rpx;line-height: 44rpx;font-size:24rpx;color:#666;}
+
+.supper{width:280rpx;height:36rpx;margin:28rpx auto;}
+.supper image{width:100%;height:100%;}
+
+
+/* 弹框 */
+.model{width:100%;height:100%;position:fixed;z-index:9999;top:0;left:0;background: rgba(0,0,0,0.5); visibility:hidden; opacity:0;
+  transition:opacity .3s;}
+.model .mode-content{width:560rpx;height:auto;background-color: #fff;text-align: center;position:absolute;top:30%;left:13%;padding-top:46rpx;border-radius: 20rpx;}
+.modelImg{width:64rpx;height:64rpx;margin:0 auto;display: block;}
+.title{font-size:30rpx;color:#000;margin-top:34rpx;display: block;}
+.confim{height:98rpx;border-top:1rpx solid #E6E6E6;margin-top:58rpx;display: flex;align-items: center;}
+.confim text{flex:1;height:100%;line-height:98rpx;}
+.confim .quxiao{border-right:1rpx solid #ddd;}
+.inputs{background-color:#f5f5f5;
+  width:70%;
+  margin:20rpx auto 0;
+  text-align:left;
+  font-size:24rpx;
+  padding:10rpx 10rpx;
+  }
+
+.show-dialog{  visibility:visible;opacity:1;}
+
+
+
+/* 瀑布流 */
+
+.article-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+ 
+.left, .right {
+  display: inline-block;
+  vertical-align: top;
+  width: 48.6%;
+}
+ 
+.right {
+  /* float: right; */
+}
+ .active_all .ul .left{margin-right:10rpx;}
+/* .active_all .ul .left .li .active_img{width:100%;height:230rpx;}
+.active_all .ul .right .li .active_img{width:100%;height:345rpx;} */
+
+.active_all .ul .left .li .active_img{width:100%;height:auto;}
+.active_all .ul .right .li .active_img{width:100%;height:auto;}
+ 

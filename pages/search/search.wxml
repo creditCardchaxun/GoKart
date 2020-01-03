@@ -1,0 +1,85 @@
+<!--pages/search/search.wxml-->
+ <view class='page'>
+      <view class="page__bd">
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">请输入搜索内容</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="reachInput">{{titleMain}}</view>
+            <!-- <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput" wx:if='{{!showVa}}'>取消</view> -->
+        </view>
+    </view>
+
+</view>
+
+<view class='allsearch' hidden="{{inputVal.length > 0}}">
+  <view class='hotsearch'>
+    <view class='h3'>热门搜索</view>
+    <view class='hot_icon'>
+      <text wx:for="{{hotReach}}" wx:key='index' bindtap='hotToReach' data-name='{{item.name}}'>{{item.name}}</text>
+    </view>
+  </view>
+
+  <view class='historySearch'>
+    <view class='h3'>历史搜索<view class='text' bindtap='toDeleteAll'>清除</view></view>
+    <view class='history-list'>
+      <view class='p' wx:for="{{historyReach}}" wx:key='index'><text bindtap='hotToReach' data-name='{{item.name}}'>{{item.name}}</text> 
+        <image src='http://kart.yaocongkeji.com/applets/image/close.png' bindtap='toDelete' data-id='{{item.id}}'></image></view>
+        </view>
+  </view>
+</view>
+
+ <view class="movie-content-wrapper" wx:if="{{inputVal.length > 0}}">
+      <view class='total-01'>
+       <block wx:if="{{lists.length>0}}">
+         <scroll-view scroll-y="{{true}}">
+              <view class='find_list' wx:for="{{lists}}" wx:key='index'>
+                 <view class='find-img'><navigator url='/pages/findDetail/findDetail?id={{item.id}}'><image src='{{item.pic}}' mode='widthFix'></image></navigator></view>
+                 <view class='h3'> <text>{{item.name}}</text> 
+                 <!-- <view class='star {{starHover?"ons":"" }}' bindtap='toChange'></view>  -->
+                  <!-- <image src='http://kart.yaocongkeji.com/applets/image/likes.png' class='star' wx:if="{{item.red==2}}" 
+          data-id="{{item.id}}" bindtap='toChange' data-like="1"></image>
+        <image src='http://kart.yaocongkeji.com/applets/image/likes_hover.png' class='star' wx:if="{{item.red==1}}" 
+          data-id="{{item.id}}" bindtap='toChange' data-like="2"></image> -->
+                      <view class='starHover' style='width:10%;height:60rpx;display:inline-block;position:absolute;top:0;right:0;' data-id="{{item.id}}" bindtap='toChange' data-like="1" wx:if="{{item.red==2}}" >
+       <image src='http://kart.yaocongkeji.com/applets/image/likes.png' class='star' wx:if="{{item.red==2}}"></image>
+        </view>
+      <view class='starHover' style='width:10%;height:60rpx;display:inline-block;position:absolute;top:0;right:0;' 
+      wx:if="{{item.red==1}}"  data-id="{{item.id}}" bindtap='toChange' data-like="2">
+        <image src='http://kart.yaocongkeji.com/applets/image/likes_hover.png' class='star' wx:if="{{item.red==1}}"></image>
+         </view>
+         
+                  </view>
+                 <view class='find-p'>{{item.desc}}</view>
+              </view>
+          </scroll-view>
+       </block>
+       <view class='none' wx:if="{{toFail}}">
+          <image src='/pages/img/none.png'></image>
+          <text>暂无相关内容</text> 
+       </view>
+           </view>
+   </view>
+
+        <!-- 弹框 -->
+    <view class='model {{showModel? "show-dialog":""}}'>
+       <view class='mode-content'>
+            <image src='/pages/img/likes_icon.png' class='modelImg'></image>
+             <text class='title'>收藏成功！</text>
+             <!-- <input type="text" placeholder='请输入您的密码' class='inputs' bindinput="bindKeyInput"></input> -->
+             <view class='confim'>
+                 <!-- <text class='quxiao' bindtap="closeDialog">取消</text> -->
+                 <text bindtap="closeDialog" style='color:#C53D43;'>知道了</text>
+             </view>
+       </view>
+    </view>

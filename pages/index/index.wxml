@@ -1,0 +1,131 @@
+<!--index.wxml-->
+<view class="container">
+   <scroll-view class="scrollView" scroll-x='true'>
+  <swiper
+  indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}"
+  interval="{{interval}}"
+  duration="{{duration}}"
+  indicator-active-color="#C53D43"
+  indicator-color="#fff"
+  >
+  <block wx:for="{{imgList}}" wx:key="{{index}}">
+    <swiper-item>
+     <image src="{{item.pic}}" class="slide-image" mode="widthFix" width="750" />
+    </swiper-item>
+  </block>
+</swiper>
+</scroll-view>
+<view class="logo"><image src='http://kart.yaocongkeji.com/applets/image/logo.png' mode="aspectFit"></image></view>
+ 
+ <view class="activity">
+    <text class='h3'>活动&赛事</text>
+    <view class="active_all">
+      <view class='ul'>
+        <!-- <view class='li' wx:for="{{activityAll}}">
+            <view class='active_img'>
+              <navigator url='/pages/activeDetail/activeDetail'>
+                <image src='{{item.pic}}' mode="widthFix" style="width：100%"></image>
+                <view class="active-position">
+                 <image src='/pages/img/jiao.png'></image>
+                   <image src='/pages/img/jia.png' class="s_icon" hidden="{{!showIcon}}"></image>
+                   <image src='/pages/img/chengtuan.png' class="s_icon" hidden="{{!showIcon2}}"></image>
+                   <image src='/pages/img/encrypt.png' class="s_icon" hidden="{{!showIcon3}}"></image>
+                 </view>
+               </navigator>
+            </view>
+
+             <view class='active-main'>
+                <view class='active-btn'><text>卡丁车-室内赛道</text><text>{{statusAll}}</text></view>
+                <view class='active-h3'>{{item.name}}</view>
+                <view class='active-date'>{{item.updated_at}} <text>{{item.date}}</text></view>
+                <view class='active-avtar'> 
+                  <image src='{{item.creater.avatar}}' class='userinfo-avatar'></image> 
+                  <text class='userinfo-nickname'>{{item.creater.nickname}}</text>
+                </view>
+             </view>
+          </view> -->
+
+          <view class='article-list' wx:if="{{activityAll.length>0}}">
+            <view class="left">
+              <block wx:for="{{activityAll}}" wx:for-index="index" wx:key="{{index}}" >
+                <!-- <template is="item" wx:if="{{index%2==0}}"></template> -->
+              <view class='li' wx:if="{{index%2==0}}" >
+              <view class='active_img' bindtap='toDetail' data-id="{{item.id}}" data-password="{{item.password}}">
+                <!-- <navigator url='/pages/activeDetail/activeDetail?id={{item.id}}'> -->
+                  <image src='{{item.pic}}' mode="widthFix" style="width：100%"></image>
+                  <view class="active-position">
+                    <image src='http://kart.yaocongkeji.com/applets/image/jiao.png'></image>
+                    <!-- <image src='http://kart.yaocongkeji.com/applets/image/jia.png' class="s_icon" hidden="{{!showIcon}}"></image>
+                    <image src='http://kart.yaocongkeji.com/applets/image/chengtuan.png' class="s_icon" hidden="{{!showIcon2}}"></image>
+                    <image src='http://kart.yaocongkeji.com/applets/image/encrypt.png' class="s_icon" hidden="{{!showIcon3}}"></image> -->
+
+                       <image src='http://kart.yaocongkeji.com/applets/image/jia.png' class="s_icon" wx:if="{{item.password==''&&item.complate_status==0}}"></image>
+                    <image src='http://kart.yaocongkeji.com/applets/image/chengtuan.png' class="s_icon" wx:if="{{item.password==''&&item.complate_status==1}}"></image>
+                    <image src='http://kart.yaocongkeji.com/applets/image/encrypt.png' class="s_icon" wx:if="{{item.password!=''}}"></image>
+                  </view>
+                <!-- </navigator> -->
+              </view>
+
+              <view class='active-main'>
+                  <view class='active-btn'><text>{{item.type_name}}</text><text>{{item.is_complete}}</text></view>
+                  <view class='active-h3'>{{item.name}}</view>
+                  <view class='active-date'>{{item.created_at}} <text>{{item.date}}</text></view>
+                  <view class='active-avtar'> 
+                    <image src='{{item.avatar}}' class='userinfo-avatar'></image> 
+                    <text class='userinfo-nickname'>{{item.nickname}}</text>
+                  </view>
+                </view>
+              </view>
+              </block>
+            </view>
+            <view class="right">
+              <block wx:for="{{activityAll}}" wx:for-index="index" wx:key="{{index}}">
+                     <view class='li' wx:if="{{index%2==1}}">
+                      <view class='active_img' bindtap='toDetail'  data-id="{{item.id}}" data-password="{{item.password}}">
+                          <image src='{{item.pic}}' mode="widthFix" style="width：100%"></image>
+                          <view class="active-position">
+                          <image src='http://kart.yaocongkeji.com/applets/image/jiao.png'></image>
+                       <image src='http://kart.yaocongkeji.com/applets/image/jia.png' class="s_icon" wx:if="{{item.password==''&&item.complate_status==0}}"></image>
+                    <image src='http://kart.yaocongkeji.com/applets/image/chengtuan.png' class="s_icon" wx:if="{{item.password==''&&item.complate_status==1}}"></image>
+                    <image src='http://kart.yaocongkeji.com/applets/image/encrypt.png' class="s_icon" wx:if="{{item.password!=''}}"></image>
+                          </view>
+                      </view>
+                      <view class='active-main'>
+                          <view class='active-btn'><text>{{item.type_name}}</text><text>{{item.is_complete}}</text></view>
+                          <view class='active-h3'>{{item.name}}</view>
+                          <view class='active-date'>{{item.created_at}} <text>{{item.date}}</text></view>
+                          <view class='active-avtar'> 
+                            <image src='{{item.avatar}}' class='userinfo-avatar'></image> 
+                            <text class='userinfo-nickname'>{{item.nickname}}</text>
+                          </view>
+                      </view>
+                    </view>
+              </block>
+            </view>
+          </view>
+          <view wx:else style='font-size:26rpx;text-align:center;color:#666;padding:90rpx 0;'>暂无活动赛事</view>
+
+      </view> 
+    </view>
+  
+ </view>
+   <view class='supper'><image src='http://kart.yaocongkeji.com/applets/image/yckj-logo.png' mode="widthFix"></image></view>
+</view>
+
+
+    <!-- 弹框 -->
+    <view class='model {{showModel? "show-dialog":""}}'>
+       <view class='mode-content' >
+            <!-- <image src='/pages/img/dh-icon.png' class='modelImg'></image> -->
+             <text class='title'>输入密码</text>
+             <input type="text" placeholder='请输入您的密码' class='inputs' bindinput="bindKeyInput" value='{{inputValue}}'></input>
+             <view class='confim'>
+                 <text class='quxiao' bindtap="closeDialog">取消</text>
+                 <text bindtap="confimDialog" style='color:#C53D43;' data-id='{{ids}}'>确认</text>
+             </view>
+       </view>
+    </view>
+
+
+

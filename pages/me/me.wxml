@@ -1,0 +1,72 @@
+<!--pages/me/me.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 您还未登录请点击登录 </button>
+    <block wx:else>
+      <navigator url='/pages/personSave/personSave'>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <image src='http://kart.yaocongkeji.com/applets/image/more.png' class='more'></image>
+       </navigator>
+    </block>
+  </view>
+   <view style='text-align:center;padding:20px 0;' wx:if='{{!hasUserInfo && canIUse}}'>暂无相册 </view>
+   <view class='userImg' wx:else>
+      <!-- <view class='user-left'>         
+      </view> -->
+      <view class='user-right' wx:if="{{photoList.length>0}}">
+            <block wx:for="{{photoList}}">
+             <image src='{{item.pic}}'></image>
+            </block>
+      </view>
+        <view class='photos' style="text-align:center;font-size:24rpx;margin:30rpx 0;" wx:else> 
+         <navigator url='/pages/photosList/photosList'>您还没有相册快去添加相册吧... </navigator>
+        </view>
+   </view>
+    <navigator url='/pages/photosList/photosList' wx:if="{{photoList.length>0}}">
+    <button type='default' class='more-img'>查看更多图片</button></navigator>
+      <view class="page__hd">
+        <view class="weui-cells weui-cells_after-title">
+            <navigator bindtap='tolikes' class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button> -->
+                <view class="weui-cell__hd">
+                    <image src="http://kart.yaocongkeji.com/applets/image/favorite.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd">我的收藏</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+             
+            </navigator>
+            <navigator  bindtap='contactMessage' class="weui-cell weui-cell_example weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="http://kart.yaocongkeji.com/applets/image/kefu-2.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd">联系客服</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            
+          <navigator url="/pages/message/message" class="weui-cell weui-cell_example weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="http://kart.yaocongkeji.com/applets/image/xiaoxi.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd">系统消息</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+          
+
+        </view>
+    </view>
+
+</view>
+
+
+  <!-- 弹框 -->
+    <view class='model {{showModel? "show-dialog":""}}'>
+       <view class='mode-content'>
+            <image src='http://kart.yaocongkeji.com/applets/image/dh-icon.png' class='modelImg'></image>
+             <text class='title' style='letter-spacing:5rpx;'>{{phone}}</text>
+             <view class='confim'>
+                 <text class='quxiao' bindtap="closeDialog">取消</text>
+                 <text bindtap="freeTell" style='color:#C53D43;'>拨打</text>
+             </view>
+       </view>
+    </view>

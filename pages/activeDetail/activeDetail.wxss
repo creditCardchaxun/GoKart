@@ -1,0 +1,93 @@
+/* pages/activeDetail/activeDetail.wxss */
+.banner{width:100%;height:auto;position: relative;
+/* background: url('http://kart.yaocongkeji.com/applets/image/banner.png')no-repeat 100% 100%;background-size:100% 100%; */
+}
+.banner swiper{width:100%;height:400rpx;}
+/* .banner image{width:100%;height:auto;} */
+.activexq{width:100%;height:auto;background-color:#fff;border-top-left-radius: 60rpx;border-top-right-radius: 60rpx;position: relative;}
+.active_01{width:auto;padding:30rpx 20rpx 0;margin-top:-60rpx;}
+.active_01 .empty{width:55rpx;height:6rpx;background-color: #C53D43;display: block;margin-top:20rpx;}
+.active_01 .p{overflow: hidden;margin-top:30rpx;}
+.active_01 .p .p_m{width:70%;float:left;font-size:30rpx;font-family:PingFang SC;font-weight:400;color:rgba(102,102,102,1);overflow: hidden;height:50rpx;line-height: 50rpx;}
+.active_01 .p_s{width:auto;float:right;}
+.active_01 .p_s text{width:auto;height:36rpx;line-height:36rpx;border:1rpx solid #C53D43;color:#C53D43;padding:0 10rpx;font-size:20rpx;}
+.active_01 .p_s .car{margin-right:20rpx;}
+.intro{height:auto;line-height: 38rpx;color:#666;font-size:24rpx;margin-top:30rpx;}
+.active_date{width:auto;height:auto;display: flex;flex-direction: column; margin-top:36rpx;}
+.date_01{display: flex;align-items: center;}
+.active_date image{width:24rpx;height:24rpx;}
+.active_date text{color:#999;font-size:24rpx;margin-left:15rpx;}
+.active_02{width:100%;height:auto;margin-top:66rpx;border-top:1rpx solid #f5f5f5;overflow: hidden;}
+.active02{width:auto;padding:0 20rpx;float:left;margin-top:30rpx;}
+.userinfo-avatar{width:43rpx;height:43rpx;float:left;margin-right:18rpx;border-radius: 20rpx;}
+.userinfo-nickname{color:#666666;font-size:24rpx;line-height:43rpx;float:left;margin-right:18rpx;}
+.userinfo-qi{width:34rpx;height:31rpx;float:left;margin-top:8rpx;}
+.userinfo-num{width:66rpx;height:66rpx;float:right;margin-top:18rpx;margin-right:20rpx;}
+.active_03{width:710rpx;padding: 26rpx 0rpx 26rpx;box-shadow: 0 0 2rpx 5rpx #f5f5f5;margin:35rpx auto 0;border-radius:12rpx;}
+.active03{width:auto;padding:0 20rpx;overflow: hidden;}
+.active03  text{font-size:28rpx;color:#454545;float:left;margin-left:17rpx;width:89%;overflow: hidden;}
+.active_03 .map{width:36rpx;height:36rpx;float:left;}
+.active_03 .left{width:16rpx;height:26rpx;float:right;margin-top:8rpx;}
+
+.active_04{width:710rpx;padding: 26rpx 0rpx 26rpx;box-shadow: 0 0 2rpx 5rpx #f5f5f5;margin:35rpx auto 0;border-radius:12rpx;text-align: center}
+.active_04 .h3{color:#231916;font-size:45rpx;display: block;}
+.active_04 .p{color:#231916;font-size:24rpx;display: block;margin-top:10rpx;}
+.act_date{width:auto;height:auto;text-align: center;margin-top:30rpx;}
+.act_date .bg{width:80rpx;height:81rpx;text-align: center;background:url('http://kart.yaocongkeji.com/applets/image/timing.png')no-repeat 100% 100%; background-size:100% 100%;display: inline-block;color:#fff;font-size:38rpx;line-height:81rpx;
+}
+.act_date text{font-size:24rpx;font-family:PingFang SC;font-weight:400;color:rgba(211,31,38,1);margin:0 20rpx;}
+.timeover{width:305rpx;height:64rpx;margin:30rpx auto;}
+.timeover image{width:100%;height:100%;}
+.active_05{width:100%;margin-top:20rpx;padding-bottom:40rpx;}
+.active_05 .as_t{width:auto;padding:0 20rpx;overflow: hidden;}
+.active_05 .as_t .as_p{float:left;width:50%;color:#454545;font-size:28rpx;text-align: center;margin-top:30rpx;}
+.active_05 .as_t .as_p text{color:#999999;font-size:28rpx;}
+.as_icon{width:auto;padding:0 20rpx;display: flex;align-items: center;justify-items: middle;margin-top:40rpx;}
+.as_icon .as_01{text-align: center;overflow: hidden;width:14%;}
+.as_icon .as_01 .userinfo-avatars{width:43rpx;height:43rpx;border-radius:20rpx;
+}
+.as_icon .as_01 .userinfo-nicknames{color:#666666;font-size:22rpx;line-height:43rpx;display: block;height:43rpx;overflow: hidden;}
+
+.active_xq02{border-top:20rpx solid #F5F5F5;padding-bottom: 70rpx;border-bottom:20rpx solid #f5f5f5;}
+.xq03{width:auto;padding:0 20rpx;}
+.active_xq02 .h2{color:#C53D43;font-size:30rpx;margin:38rpx 0 32rpx;border-left:4rpx solid #C53D43;padding-left:20rpx;}
+.a-intro{width:100%;height:auto;}
+.a-intro image{width:100%;height:400rpx;}
+.a-intro text{color:#454545;font-size:28rpx;line-height: 48rpx;}
+.wx{width:295rpx;height:109rpx;margin:20rpx auto 0;display: block;}
+.wx-text{text-align: center;display: block;color:#999999;font-size:20rpx;margin-top:16rpx;}
+
+.footer{width:100%;height:108rpx;line-height: 108rpx;position:fixed;bottom:0;left:0;background-color: #fff;display: flex;align-items: center;justify-content:space-around;}
+.footer .foot-01{width:auto;height:auto;align-items: center;display: flex;position:relative;}
+.footer .foot-01 image{width:44rpx;height:44rpx;}
+.footer .foot-01 text{margin-left:20rpx;color:#666666;font-size:24rpx;}
+.footer .foot-01 .btn{width:200rpx;height:60rpx;background-color: #C53D43;color:#fff;line-height:60rpx;font-size:28rpx;}
+.footer .foot-01 .userinfoBtn{position:absolute;width:200rpx;height:60rpx;z-index:-999;}
+
+.footer .foot-01 button[disabled]:not([type]) {
+color:#999;
+background-color:#E6E6E6;
+}
+.footer .foot-01 .disabled{color:#999;
+background-color:#E6E6E6;}
+
+.jiesuan{width:300rpx;height:60rpx;line-height: 60rpx;background-color:#C53D43;color:#fff;text-align: center;margin:0 auto;border-radius:12rpx;margin-top:30rpx;font-size:26rpx;}
+
+.footer .foot_btn{width:auto;height:auto;overflow: hidden;position:relative;}
+.footer .foot_btn .sharebutton{width:100%;height:100%;position:absolute;top:0;left:0;border:none;}
+
+.a-intro view{color:#333;font-size:26rpx;}
+
+/* 弹框 */
+.model{width:100%;height:100%;position:fixed;z-index:9999;top:0;left:0;background: rgba(0,0,0,0.5); visibility:hidden; opacity:0;
+  transition:opacity .1s;
+  }
+.model .mode-content{width:560rpx;height:auto;background-color: #fff;text-align: center;position:absolute;top:30%;left:13%;padding-top:46rpx;border-radius: 20rpx;}
+.modelImg{width:64rpx;height:64rpx;margin:0 auto;display: block;}
+.title{font-size:30rpx;color:#000;margin-top:34rpx;display: block;}
+.confim{height:98rpx;border-top:1rpx solid #E6E6E6;margin-top:58rpx;display: flex;align-items: center;}
+.confim text{flex:1;height:100%;line-height:98rpx;}
+.confim .quxiao{border-right:1rpx solid #ddd;}
+.show-dialog{  visibility:visible;opacity:1;}
+
+

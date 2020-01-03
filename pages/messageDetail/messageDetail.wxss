@@ -1,0 +1,4 @@
+/* pages/messageDetail/messageDetail.wxss */
+.container{width:710rpx;height:auto;margin:0 auto;}
+.container .message{text-align: center;font-size:30rpx;color:#000;line-height: 35rpx;height:35rpx;overflow: hidden;}
+.container .content view{font-size:24rpx;color:#000;line-height:30rpx;margin-top:10rpx;}

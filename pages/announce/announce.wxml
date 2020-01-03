@@ -1,0 +1,243 @@
+<!--pages/announce/announce.wxml-->
+<view class='container'>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+       <view class='fabu'>
+              <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">活动类型:</view>
+                </view>
+                <view class="weui-cell__bd">
+                <!-- <navigator url='/pages/chooseActity/chooseActity'> -->
+                    <input class="weui-input" disabled='true' value='{{inputValue}}' bindtap='toBindType' name='posts_id'
+                     data-id="{{inputValueId}}" style='text-align:right;padding-right:50rpx;'/>
+                     <image src='http://kart.yaocongkeji.com/applets/image/more.png' class="left-other"></image>
+                 <!-- </navigator>     -->
+                </view>
+              </view>
+          </view>
+         <view class='fabu'>
+                <view class="weui-cell" bindtap='toDate'>
+                <view class="weui-cell__hd">
+                    <view class="weui-label">日期</view>
+                </view>
+                <view class="weui-cell__bd" style='text-align:right;padding-right:50rpx;height:44rpx;'>
+                    <!-- <picker mode="date" value="{{date}}"  bindchange="bindDateChange" name='date'> -->
+                        <!-- <view class="weui-input">{{date}}</view> -->
+                    <!-- </picker> -->
+                    {{timeValue}}
+                    <image src='http://kart.yaocongkeji.com/applets/image/more.png' class="left-other"></image>
+                </view>
+            </view>
+            <view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">时间</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <!-- <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange" name='time'>
+                        <view class="weui-input">{{time}}</view>
+                    </picker> -->
+                     <picker bindchange="bindAccountChange" value="{{accountIndex}}" range="{{accounts}}" data-time='{{accountChuo[accountChuoIndex]}}' name='time'>
+                        <view class="weui-select" style="padding:0 0;text-align:right;padding-right:50rpx;">{{accounts[accountIndex]}}</view>
+                    </picker>
+                    <!-- <image src='/pages/img/more.png' class="left"></image> -->
+                </view>
+            </view>
+         </view>
+
+             <view class='fabu'>
+              <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">活动名称:</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder='请起个独一无二的活动名称吧' name='name' value='{{userName}}' style="text-align:right;padding-right:30rpx;" />
+                </view>
+              </view>
+
+              <view class="weui-cellss">
+                    <view class="weui-title">上传活动背景图：<text>（请上传封面图最多上传一张）</text></view>
+                <view class="weui-block">
+                      <view class='alls' wx:if="{{coverStatus}}">
+                        <image src='{{covers}}'  style="width:200rpx;height:200rpx;"></image>
+                        <view class='cover' bindtap='toPhotos'>更换封面</view>
+                      </view>
+                      <image src='http://kart.yaocongkeji.com/applets/image/upload.png' wx:else style="width:200rpx;height:200rpx"></image>
+                </view>
+              </view>
+
+               <!-- <view class="weui-cell"> 
+                <view class="weui-cell__bd"> 
+                <view class="weui-uploader"> 
+                  <view class="weui-uploader__hd"> 
+                  <view class="weui-uploader__title">上传活动背景图：<text>（请上传封面图最多上传一张）</text></view> 
+                  </view> 
+                  <view class="weui-uploader__bd"> 
+                  <view class="weui-uploader__files"> 
+                    <block wx:for="{{imageList}}" wx:for-item="image"> 
+                    <view class="weui-uploader__file"> 
+                      <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image> 
+                    </view> 
+                    </block> 
+                  </view> 
+                  <view class="weui-uploader__input-box"> 
+                    <view class="weui-uploader__input" bindtap="chooseImage"></view> 
+                  </view> 
+                  </view> 
+                </view> 
+              </view> 
+            </view> -->
+
+        </view>
+          <view class='fabu'>
+            <view class="weui-cell weui-cell_switch">
+                <view class="weui-cell__bd">密码锁：</view>
+                <view class="weui-cell__ft">
+                    <switch bindchange="switchChange"  checked="{{passchecked}}" />
+                </view>
+            </view>
+            <view class="weui-cell " wx:if="{{passchecked}}">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name='password' placeholder="请输入您的密码,最多6位，字母数字不限" style="color:#808080;font-size:24rpx;" name='password' />
+                </view>
+            </view>
+        </view>
+
+        <view class='fabu'>
+             <view class="weui-cell weui-cell_switch">
+                <view class="weui-cell__bd">本人是否参加：</view>
+                <view class="weui-cell__ft">
+                    <switch bindchange="switchChangeTwo"  checked="{{checkeds}}" />
+                </view>
+            </view>
+        </view>
+
+        <view class='fabu person-infor' wx:if="{{checkeds}}">
+                  <!-- <view class="weui-cells weui-cells_after-title"> -->
+            <view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">姓名:</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入姓名" name='user_name' value='{{allInfor.name}}'/>
+                </view>
+            </view>
+
+               <view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">生日:</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="date" value="{{dates}}" bindchange="bindChange" name='date_of_birth'>
+                        <view class="weui-input">{{dates}}</view>
+                    </picker>
+                     <image src='http://kart.yaocongkeji.com/applets/image/more.png' class="left"></image>
+                </view>
+            </view>
+
+                <view class="weui-cell weui-cell_select">
+                   <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                    <view class="weui-label">性别</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindSexChange" value="{{sexIndex}}" range="{{sex}}" name='sex'>
+                        <view class="weui-select weui-select_in-select-after">{{sex[sexIndex]}}</view>
+                    </picker>
+                </view>
+              </view>
+
+                <view class="weui-cell weui-cell_select">
+                   <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                    <view class="weui-label">血型</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindBloodChange" value="{{bloodIndex}}" range="{{blood}}" name='blood'>
+                        <view class="weui-select weui-select_in-select-after">{{blood[bloodIndex]}}</view>
+                    </picker>
+                </view>
+               </view>
+
+              <view class="weui-cell" wx:if='{{showBlood}}'>
+                  <view class="weui-cell__hd">
+                      <view class="weui-label">其他血型:</view>
+                  </view>
+                  <view class="weui-cell__bd">
+                      <input class="weui-input" placeholder="请输入您的血型" name='bloodss' value='{{allInfor.otherblood}}'/>
+                  </view>
+              </view>
+     
+                <view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">身高:</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入身高" name='height' value='{{allInfor.height}}'/>
+                </view>
+            </view>
+            <view class="weui-cell ">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">手机号:</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入手机号" name='tel' value='{{allInfor.tel}}'/>
+                </view>
+            </view>
+
+               <view class="weui-cell weui-cell_select">
+                   <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                    <view class="weui-label  weui-lefts">是否驾驶过卡丁车:</view>
+               </view>
+               <view class="weui-cell__bd">
+                    <picker bindchange="driverChange" value="{{driverIndex}}" range="{{driver}}" name='is_first'>
+                        <view class="weui-select weui-select_in-select-after">{{driver[driverIndex]}}</view>
+                    </picker>
+                </view>
+              </view>
+       <!-- </view> -->
+        </view>
+
+          <!-- <view class="weui-btn-area" wx:if="{{!toShowModel}}">
+         
+          </view> -->
+            <view class="weui-btn-area" >
+             <button class="weui-btn" type="default" disabled='{{checked}}' formType="submit" wx:if="{{!toShowModel}}">发布</button>
+            <button class="weui-btn" wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo" disabled='{{checked}}'>发布</button>
+               
+          </view>
+
+         <checkbox-group bindchange="bindAgreeChange">
+            <label class="weui-agree" for="weuiAgree">
+                <view class="weui-agree__text" style='text-align:center;'>
+                    <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+                    <view class="weui-agree__checkbox-icon">
+                        <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+                    </view>
+                    阅读并同意
+                        <navigator url="/pages/safe/safe" class="weui-agree__link">
+                            《安全协议》
+                        </navigator>
+                        <navigator url="/pages/activity/activity" class="weui-agree__link">
+                          《活动协议》
+                        </navigator>
+                </view>
+            </label>
+        </checkbox-group> 
+
+  
+  <!-- 确认支付弹框 -->
+      <view class='model {{showModelCost? "show-dialog":""}}'>
+       <view class='mode-content'>
+            <image src='/pages/img/cost.png' class='modelImg'></image>
+             <text class='title'>您确认要取消支付订单？</text>
+             <view class='confim'>
+                 <button class='quxiao' formType="submit">取消</button>
+                 <text bindtap="closeDialog">确定</text>
+             </view>
+       </view>
+    </view>
+
+
+  </form>
+</view>
+
+
+

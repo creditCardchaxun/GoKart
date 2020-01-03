@@ -1,0 +1,58 @@
+<!--pages/findDetail/findDetail.wxml-->
+<import src="../wxParse/wxParse.wxml" />
+<view class='container'>
+  <view class='banner'><image src='{{findDetail.pic}}' mode="widthFix"></image></view>
+   <view class='findxq01'>
+     <view class='empty'></view> 
+        <view class='find_list'>
+        <view class='h3'> <text>{{findDetail.name}}</text> 
+       <!-- <image src='http://kart.yaocongkeji.com/applets/image/likes.png' class='star' wx:if="{{red==2}}" 
+     data-id="{{findDetail.id}}" bindtap='toStatus' data-like="1"></image>
+        <image src='http://kart.yaocongkeji.com/applets/image/likes_hover.png' class='star' wx:if="{{red==1}}" 
+        data-id="{{findDetail.id}}" bindtap='toStatus' data-like="2"></image> -->
+
+       <view class='starHover' style='width:10%;height:60rpx;display:inline-block;position:absolute;top:0;right:0;' 
+            data-id="{{findDetail.id}}" bindtap='toStatus' data-like="1" wx:if="{{red==2}}" >
+       <image src='http://kart.yaocongkeji.com/applets/image/likes.png' class='star' wx:if="{{red==2}}"></image>
+        </view>
+      <view class='starHover' style='width:10%;height:60rpx;display:inline-block;position:absolute;top:0;right:0;' 
+      wx:if="{{red==1}}"  data-id="{{findDetail.id}}" bindtap='toStatus' data-like="2">
+        <image src='http://kart.yaocongkeji.com/applets/image/likes_hover.png' class='star' wx:if="{{red==1}}"></image>
+       </view>  
+
+         </view>
+        <view class='find-p'>{{findDetail.desc}}</view>
+     </view>
+   </view>
+   
+     <view class='active_xq02'>
+    <view class='xq03'>
+           <view class='h2'>内容详情</view>
+            <view class='a-intro'>
+             <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+              <!-- <image src='/pages/img/banner.png'></image>
+              <text>卡丁车手遇到飞机会碰撞出什么样的火花呢。Duang、Duang，飞车手就此诞生。年轻的面庞野心勃勃，斗志昂扬。肆意翱翔在蓝天之上，狂野奔放。在天空中享受速度的激...</text>
+                  <image src='/pages/img/banner.png'></image>
+              <text>卡丁车手遇到飞机会碰撞出什么样的火花呢。Duang、Duang，飞车手就此诞生。年轻的面庞野心勃勃，斗志昂扬。肆意翱翔在蓝天之上，狂野奔放。在天空中享受速度的激...</text> -->
+
+            </view>
+     </view>
+
+       <!-- <image src='/pages/img/banner.png' class='wx'></image>
+                <text class='wx-text'>长按保存到本地</text> -->
+  </view>
+
+</view>
+
+   <!-- 弹框 -->
+    <view class='model {{showModel? "show-dialog":""}}'>
+       <view class='mode-content'>
+            <image src='/pages/img/likes_icon.png' class='modelImg'></image>
+             <text class='title'>收藏成功！</text>
+             <!-- <input type="text" placeholder='请输入您的密码' class='inputs' bindinput="bindKeyInput"></input> -->
+             <view class='confim'>
+                 <!-- <text class='quxiao' bindtap="closeDialog">取消</text> -->
+                 <text bindtap="closeDialog" style='color:#C53D43;'>知道了</text>
+             </view>
+       </view>
+    </view>

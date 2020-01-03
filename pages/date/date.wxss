@@ -1,0 +1,6 @@
+/* pages/date/date.wxss */
+.dates{display: flex;flex-direction:row; width:auto;padding:20rpx 30rpx 0;}
+.dates text{flex:1;text-align: center;font-size:28rpx;color:#333;}
+.active{background-color: #C53D43;color:#fff}
+.total{width:100%;height:auto;overflow: hidden;}
+.total .other{width:33.3%;height:auto;float:left;}

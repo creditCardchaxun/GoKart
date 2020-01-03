@@ -1,0 +1,134 @@
+<!--pages/order/order.wxml-->
+<view class="page">
+   <view class="page__bd">
+        <view class="weui-tab">
+            <view class="weui-navbar">
+                <block wx:for="{{tabsNav}}" wx:key="*this">
+                    <view id="{{index}}" class="weui-navbar__item {{activeIndexs == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClickNav">
+                        <view class="weui-navbar__title">{{item}}</view>
+                    </view>
+                </block>
+            </view>
+            <view class="weui-tab__panel">
+                <view class="weui-tab__content" hidden="{{activeIndexs != 0}}">
+                       <!-- <view class="page__bd">
+                          <view class="weui-tab"> -->
+                              <view class="wei-nav">
+                                  <block wx:for="{{tabs}}" wx:key="index">
+                                      <view id="{{index}}" class="weui-item {{activeIndex == index ? 'item_on' : ''}}" bindtap="tabClick">
+                                          <view class="weui-navbar__title02">{{item}}</view>
+                                      </view>
+                                  </block>
+                              </view>
+                              <view class="weui-tabs">  
+                                  <view class="weui-tab__content">
+                                      <view class='tuan' wx:for='{{list}}' wx:key='index'>
+                                            <view class='active_02'>
+                                              <view class='active02'>
+                                                <image src='{{item.avatar}}' class='userinfo-avatar'></image> 
+                                                <text class='userinfo-nickname'>{{item.nickname}}</text>
+                                                <image src='http://kart.yaocongkeji.com/applets/image/qi.png' class='userinfo-qi'></image>
+                                              </view>
+                                                 <!-- <view class='endTime' wx:if="{{activeTime}}">{{activeCom}}</view> -->
+                                                 <view class='endTime' >{{countTime[index]}}</view>
+                                            </view>
+                                             <view class='tuan_02'>
+                                               <navigator url='/pages/activeDetail/activeDetail?id={{item.exercise_id}}&status={{item.status_msg}}'>
+                                               <image src='{{item.pic}}' class='tuanImg'></image>
+                                               </navigator>
+                                             </view>
+                                             <view class='tuan_03'>
+                                               <view class='tuanleft'>{{item.name}}</view> 
+                                                <view class='tuanright'><text>{{item.type_name}}</text> 
+                                                <navigator url='/pages/activeDetail/activeDetail?id={{item.exercise_id}}&status={{item.status_msg}}' style='display:inline-block;'> <text>{{item.is_complete_mgs}}</text></navigator>
+                                                
+                                                </view> 
+                                             </view>
+                                             <view class='tuan_04'>
+                                              <!-- 7-4 13:33  星期四 -->
+                                              {{item.created_at}} {{item.date}}
+                                             </view>
+                                             <view class='tuan_05'>
+                                              <image src='http://kart.yaocongkeji.com/applets/image/delete.png' bindtap='deleteTuan' data-id='{{item.id}}'></image>
+                                      <button type='default' disabled='{{disableds[index]}}' class='btn' bindtap='returnTuan' data-id='{{item.id}}'   data-allstatus='{{item.complate_status}}' data-day="{{item.start}}"  >{{item.status}}</button>
+                                              <!-- <button type='default' wx:else class='btn' disabled='true'>{{item.status}}</button> -->
+                                             </view>
+
+                                        </view>
+                                  </view>
+                              </view>
+                          </view>
+                      <!-- </view>
+                  </view> -->
+                                  
+                </view>
+                <view class="weui-tab__content" hidden="{{activeIndexs != 1}}">
+                       <view class="wei-nav">
+                              <block wx:for="{{tabs}}" wx:key="index">
+                                  <view id="{{index}}" class="weui-item {{activeIndex == index ? 'item_on' : ''}}" bindtap="tabClick">
+                                      <view class="weui-navbar__title02">{{item}}</view>
+                                  </view>
+                              </block>
+                          </view>
+                               <view class="weui-tabs">  
+                                  <view class="weui-tab__content">
+                                      <view class='tuan' wx:for='{{join}}' wx:key='index'>
+                                            <view class='active_02'>
+                                              <view class='active02'>
+                                                <image src='{{item.avatar}}' class='userinfo-avatar'></image> 
+                                                <text class='userinfo-nickname'>{{item.nickname}}</text>
+                                                <image src='http://kart.yaocongkeji.com/applets/image/qi.png' class='userinfo-qi'></image>
+                                              </view>
+                                                <!-- <view class='endTime'>剩余时间：1天20时30分</view> -->
+                                                 <view class='endTime' wx:if="{{activeTime}}">{{activeCom}}</view>
+                                                 <view class='endTime' wx:else>{{countTime2[index]}}</view>
+                                            </view>
+                                             <view class='tuan_02'>
+                                               <navigator url='/pages/activeDetail/activeDetail?id={{item.exercise_id}}&status={{item.status_msg}}'>
+                                                 <image src='{{item.pic}}' class='tuanImg'></image>
+                                               </navigator>
+                                             </view>
+                                             <view class='tuan_03'>
+                                               <view class='tuanleft'>{{item.name}}</view> 
+                                                <view class='tuanright'><text>{{item.type_name}}</text> 
+                                           <navigator url='/pages/activeDetail/activeDetail?id={{item.exercise_id}}&status={{item.status_msg}}' style='display:inline-block;'><text>{{item.is_complete_mgs}}</text></navigator>
+                                                </view> 
+                                             </view>
+                                             <view class='tuan_04'>
+                                              <!-- 7-4 13:33  星期四 -->
+                                              {{item.created_at}} {{item.date}}
+                                             </view>
+                                             <view class='tuan_05'>
+                                              <image src='http://kart.yaocongkeji.com/applets/image/delete.png' bindtap='deleteTuan' data-id='{{item.id}}'></image>
+                                              <button type='default'  disabled='{{disableds[index]}}' class='btn' bindtap='returnTuan2' data-id='{{item.id}}' data-allstatus='{{item.complate_status}}' data-day="{{item.start}}" >
+                                              {{item.status}}</button>
+
+                                             <!-- <button type='default' wx:else class='btn' disabled='true'>{{item.status}}</button> -->
+                                             </view>
+                                        </view>
+                                      </view>
+                                     <!-- </view>-->
+                                   </view> 
+                 </view>
+            </view>
+        </view>
+    </view>
+
+
+    <!-- 弹框 -->
+
+    <view class='model {{showModel? "show-dialog":""}}'>
+       <view class='mode-content'>
+            <image src='http://kart.yaocongkeji.com/applets/image/return.png' class='modelImg'></image>
+             <text class='title'>您确认要退出该团吗？</text>
+             <view class='confim'>
+                 <text class='quxiao' bindtap="closeDialog">取消</text>
+                 <text bindtap="showReturn" data-id="{{ids}}" data-status="{{tuiAll}}">确定</text>
+             </view>
+       </view>
+    
+    </view>
+
+
+
+ 
